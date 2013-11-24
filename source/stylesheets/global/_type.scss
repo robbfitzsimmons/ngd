@@ -1,0 +1,224 @@
+/************************************************************************\
+                                TYPOGRAPHY
+\************************************************************************/
+
+// Type Variables
+$museo-sans   : "museo-sans",          sans-serif;
+
+$ss-social    : "SSSocial Regular",    sans-serif;
+$ss-circle    : "SSSocial Circle",     sans-serif;
+$ss-standard  : "SSStandard",          sans-serif;
+
+$base-font-family    : $museo-sans;
+$base-font-size      : 16px;
+$base-line-height    : 2;
+
+$reduced-font-size      : 15px;
+$reduced-line-height    : 1.8;
+
+$minor-font-size     : 13px;
+$compact-line-height : 1.35;
+
+// Weight and Style Mixins
+
+@mixin thin {
+  font-style: normal;
+  font-weight: 100;
+}
+
+@mixin book {
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin book-italic {
+  font-style: italic;
+  font-weight: 400;
+}
+
+@mixin bold {
+  font-style: normal;
+  font-weight: 700;
+}
+
+@mixin bold-italic {
+  font-style: italic;
+  font-weight: 700;
+}
+
+@mixin heavy {
+  font-style: normal;
+  font-weight: 900;
+}
+
+// TypeKit fonts will be hidden until they load.
+.wf-loading {
+  visibility: hidden;
+}
+
+// Headers
+h1, h2, h3, h4, h5, h6 {
+  color: $blue;
+  font-weight: normal;
+  line-height: $compact-line-height;
+  margin: .5em 0 0 0;
+}
+
+h1 {
+  @include heavy;
+  font-size: 60px;
+  font-family: $museo-sans;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+  &.hero {
+    color: $white;
+    width: 100%;
+  }
+}
+
+h2 {
+  font-size: 30px;
+  font-family: $museo-sans;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 30px;
+  font-family: $museo-sans;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+h4 {
+  font-size: 13px;
+  font-family: $museo-sans;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  margin-top: 2em;
+  &.double-margin {
+    margin-top: 4em;
+  }
+}
+
+h5 { }
+h6 { }
+
+b, strong {
+  @include bold;
+  em {
+    @include bold-italic;
+  }
+}
+
+em {
+  @include book-italic;
+  b, strong {
+    @include bold-italic;
+  }
+}
+
+p {
+  @include book;
+  text-align: justify;
+  margin-top: 1.5em;
+
+  &.first {
+    margin-top: 0;
+  }
+  &.half-margin {
+    margin-top: .5em;
+  }
+  &.double-margin {
+    margin-top: 5em;
+  }
+  &.centered {
+    text-align: center;
+  }
+  &.minor {
+    font-size: $minor-font-size;
+  }
+}
+
+q {
+  @include book;
+  display: block;
+  font-size: 1.4 * $base-font-size;
+  line-height: $compact-line-height;
+  text-align: justify;
+  margin: 26px 0 36px 0; // Top has less margin b/c of type line-heights
+  color: $blue;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid;
+  @include transition(all .3s);
+
+  &:active, &:hover {
+    color: $Brand-0;
+    border-bottom: 2px solid $Brand-0;
+  }
+
+  &.discrete {
+    border-bottom: 0;
+    &:active, &:hover {
+      border-bottom: 0;
+    }
+  }
+}
+
+code, kbd, pre, samp {
+  font-family: monospace,serif;
+  font-size: $base-font-size;
+}
+pre {
+  white-space: pre-wrap;
+}
+::selection, ::-moz-selection {
+  background: $green;
+}
+
+small {
+  font-size: 80%;
+}
+
+abbr[title] { border-bottom: 1px dotted; }
+
+sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+.ss-standard {
+  font-family: $ss-standard;
+}
+
+.ss-icon, .ss-book, .ss-user {
+  margin-right: 1px;
+  font-size: 10px;
+}
+.ss-social {
+  font-family: $ss-social;
+  margin-right: 1px;
+  font-size: 10px;
+}

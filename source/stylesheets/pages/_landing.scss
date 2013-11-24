@@ -1,0 +1,118 @@
+/************************************************************************\
+                        LANDING PAGE SPECIFIC STYLES
+\************************************************************************/
+
+/************************************************************************\
+                                 HERO
+\************************************************************************/
+.hero-area {
+  position: relative;
+}
+.hero-logo-wrap {
+  .hero-logo {
+    width: 320px;
+  }
+  .hero-icon {
+    width: 40px;
+  }
+
+  .hero-logo-full-wrap {
+    top: 10%;
+  }
+  .hero-logo-icon-wrap {
+    top: 9%;
+    left: 5%;
+  }
+
+  @media screen and (min-width: $breakpoint_small+1) {
+    .hero-logo-full-wrap { display: block; }
+    .hero-logo-icon-wrap { display: none; }
+  }
+  @media screen and (max-width: $breakpoint_small) {
+    .hero-logo-full-wrap { display: none; }
+    .hero-logo-icon-wrap { display: block; }
+  }
+}
+
+.hero-footer {
+  color: $white;
+  bottom: 10%;
+
+  @media screen and (max-width: $breakpoint_small) {
+    &.absolute-centered {
+      position: relative;
+      color: $black;
+      width: 86%;
+      margin: 0px auto;
+      padding: 20px 0 0 0;
+    }
+  }
+}
+
+.hero-text {
+  top: 37%;
+  @media screen and (max-width: $breakpoint_small) {
+    top: 43%;
+  }
+}
+.hero-bg {
+  width: 100%;
+}
+
+/************************************************************************\
+                                 TEAM
+\************************************************************************/
+.team-member {
+  .professional-headshot { display: block; }
+
+  .person-info {
+    @include clearfix;
+  }
+  .person-info-headers {
+    padding-left: 70px;
+  }
+
+  h3 {
+    font-size: 22px;
+    line-height: 22px;
+    padding-top: -4px;
+    text-transform: uppercase;
+  }
+  h4 {
+    float: left;
+    font-size: 12px;
+    line-height: 12px;
+    margin-top: 9px;
+    margin-right: 6px;
+  }
+
+  .team-headshot {
+    float: left;
+    width: 60px;
+    border-radius: 30px;
+  }
+
+  .team-social-links {
+    float: left;
+    font-size: 11px;
+    line-height: 11px;
+    margin-top: 9px;
+    letter-spacing: 3px;
+  }
+}
+
+@media screen and (max-width: $breakpoint_small) {
+  .two-columns.extra-margin {
+    margin-top: 0px;
+  }
+}
+
+/************************************************************************\
+                                FOOTER
+\************************************************************************/
+.footer-bg {
+  text-align: center;
+}
+.footer-icon {
+  width: 70px;
+}
